@@ -1,7 +1,7 @@
 #define FONT_LIB_V3
 // Created by http://oleddisplay.squix.ch/ Consider a donation
 // In case of problems make sure that you are using the font file with the correct version!
-const char Crushed_Plain_36[] PROGMEM = {
+const uint8_t Crushed_Plain_36[] PROGMEM = {
   0x1B, // Width: 27
   0x2A, // Height: 42
   0x20, // First Char: 32
