@@ -5,6 +5,7 @@
  * https://github.com/esp8266/Arduino/blob/master/libraries/Ticker (libreria compresa in ESP8266/Arduino)
  * https://github.com/squix78/json-streaming-parser
  * https://github.com/ThingPulse/esp8266-oled-ssd1306
+ * https://github.com/ThingPulse/esp8266-weather-station
  * https://github.com/sparkfun/SparkFun_BME280_Arduino_Library
  * Tutte le librerie sono installabili tramite la gestione librerie dell'IDE di Arduino
  **************************/
