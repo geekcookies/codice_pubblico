@@ -2,8 +2,12 @@
 
 /***************************
  * Librerie e File
+ * https://github.com/esp8266/Arduino/blob/master/libraries/Ticker (libreria compresa in ESP8266/Arduino)
+ * https://github.com/squix78/json-streaming-parser
  * https://github.com/ThingPulse/esp8266-oled-ssd1306
+ * https://github.com/ThingPulse/esp8266-weather-station
  * https://github.com/sparkfun/SparkFun_BME280_Arduino_Library
+ * Tutte le librerie sono installabili tramite la gestione librerie dell'IDE di Arduino
  **************************/
 #include <ESP8266WiFi.h>
 #include <Ticker.h>
@@ -82,7 +86,7 @@ void drawProgress(OLEDDisplay *display, int percentage, String label) { // Routi
   display->display();
 }
 
-void drawClock(OLEDDisplay *display, int x, int y, int timeZoneIndex, String city, const char* icon) { // Routine che visualizza il frame dell'orologio
+void drawClock(OLEDDisplay *display, int x, int y, int timeZoneIndex, String city, const uint8_t* icon) { // Routine che visualizza il frame dell'orologio
   display->setTextAlignment(TEXT_ALIGN_LEFT);
   display->setFont(ArialMT_Plain_10);
   display->drawString(x + 55, y + 5, "Ora Esatta");
@@ -91,7 +95,7 @@ void drawClock(OLEDDisplay *display, int x, int y, int timeZoneIndex, String cit
   display->drawString(x + 55, y + 15, worldClockClient.getHours(timeZoneIndex) + ":" + worldClockClient.getMinutes(timeZoneIndex));
 }
 
-void drawTemp(OLEDDisplay *display, int x, int y, const char* icon, String Lettura) { // Routine genera il frame della temperatura
+void drawTemp(OLEDDisplay *display, int x, int y, const uint8_t* icon, String Lettura) { // Routine genera il frame della temperatura
   display->setTextAlignment(TEXT_ALIGN_LEFT);
   display->setFont(ArialMT_Plain_10);
   display->drawString(x + 55, y + 5, "Temperatura C°");
@@ -100,7 +104,7 @@ void drawTemp(OLEDDisplay *display, int x, int y, const char* icon, String Lettu
   display->drawString(x + 55, y + 15, Lettura);
 }
 
-void drawHum(OLEDDisplay *display, int x, int y, const char* icon,String Lettura) { // Routine che genera il frame dell'umidità
+void drawHum(OLEDDisplay *display, int x, int y, const uint8_t* icon,String Lettura) { // Routine che genera il frame dell'umidità
   display->setTextAlignment(TEXT_ALIGN_LEFT);
   display->setFont(ArialMT_Plain_10);
   display->drawString(x + 55, y + 5, "Umidita %");
@@ -109,7 +113,7 @@ void drawHum(OLEDDisplay *display, int x, int y, const char* icon,String Lettura
   display->drawString(x + 55, y + 15, Lettura);
 }
 
-void drawPress(OLEDDisplay *display, int x, int y, const char* icon,String Lettura) { // Routine che genera il frame della pressione
+void drawPress(OLEDDisplay *display, int x, int y, const uint8_t* icon,String Lettura) { // Routine che genera il frame della pressione
   display->setTextAlignment(TEXT_ALIGN_LEFT);
   display->setFont(ArialMT_Plain_10);
   display->drawString(x + 55, y + 5, "Pressione");
